@@ -4,17 +4,15 @@ extern crate tokio_io;
 extern crate tokio_proto;
 extern crate tokio_service;
 
-mod codec;
-
 use std::io;
 use std::str;
-use bytes::BytesMut;
-use tokio_io::codec::{Encoder, Decoder};
-use tokio_proto::pipeline::ServerProto;
-use tokio_io::{AsyncRead, AsyncWrite};
-use tokio_io::codec::Framed;
+use self::bytes::BytesMut;
+use self::tokio_io::codec::{Encoder, Decoder};
+use self::tokio_proto::pipeline::ServerProto;
+use self::tokio_io::{AsyncRead, AsyncWrite};
+use self::tokio_io::codec::Framed;
 
-use codec::Line as LineCodec;
+use super::codec::Line as LineCodec;
 
 pub struct Line;
 

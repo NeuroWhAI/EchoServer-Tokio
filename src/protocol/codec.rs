@@ -6,8 +6,8 @@ extern crate tokio_service;
 
 use std::io;
 use std::str;
-use bytes::BytesMut;
-use tokio_io::codec::{Encoder, Decoder};
+use self::bytes::BytesMut;
+use self::tokio_io::codec::{Encoder, Decoder};
 
 pub struct Line;
 

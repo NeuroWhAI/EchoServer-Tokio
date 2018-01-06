@@ -6,10 +6,10 @@ extern crate tokio_service;
 
 use std::io;
 use std::str;
-use bytes::BytesMut;
-use tokio_io::codec::{Encoder, Decoder};
-use tokio_service::Service;
-use futures::{future, Future};
+use self::bytes::BytesMut;
+use self::tokio_io::codec::{Encoder, Decoder};
+use self::tokio_service::Service;
+use self::futures::{future, Future};
 
 pub struct Echo;
 
