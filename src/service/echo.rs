@@ -5,9 +5,6 @@ extern crate tokio_proto;
 extern crate tokio_service;
 
 use std::io;
-use std::str;
-use self::bytes::BytesMut;
-use self::tokio_io::codec::{Encoder, Decoder};
 use self::tokio_service::Service;
 use self::futures::{future, Future};
 
