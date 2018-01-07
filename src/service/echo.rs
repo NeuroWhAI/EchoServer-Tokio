@@ -11,9 +11,9 @@ use self::tokio_io::codec::{Encoder, Decoder};
 use self::tokio_service::Service;
 use self::futures::{future, Future};
 
-pub struct Echo;
+pub struct EchoRev;
 
-impl Service for Echo {
+impl Service for EchoRev {
     // These types must match the corresponding protocol types:
     type Request = String;
     type Response = String;
@@ -26,7 +26,10 @@ impl Service for Echo {
 
     // Produce a future for computing a response from a request.
     fn call(&self, req: Self::Request) -> Self::Future {
+        let rev: String = req.chars()
+            .rev()
+            .collect();
         // In this case, the response is immediate.
-        Box::new(future::ok(req))
+        Box::new(future::ok(rev))
     }
 }
